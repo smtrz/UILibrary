@@ -1,0 +1,3 @@
+include ':UserValidate'
+include ':app'
+rootProject.name = "Sample App"

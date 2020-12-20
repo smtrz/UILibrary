@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ValidateUser_Lib</string>
+    <string name="intro">Please fill in the form below to continue</string>
+    <string name="name">Name</string>
+    <string name="address1">Address 1</string>
+    <string name="address2">Address 2</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="postalcode">Postal code</string>
+    <string name="countrycode">Country code</string>
+    <string name="submit">Submit</string>
+
+
+</resources>
