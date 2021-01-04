@@ -65,7 +65,7 @@ class LibTests {
                     signal.countDown()
                 }
                 is DataState.Error -> {
-                    result = TestHelperEnums.SUCCESS.toString()
+                    result = TestHelperEnums.FAILED.toString()
                     signal.countDown()
                 }
 
@@ -84,6 +84,19 @@ class LibTests {
     fun dataValidationSuccess() {
 
         var result: String? = null
+        Validations.setListener(object : Validationcallbacks {
+            override fun onValidationError(error: String) {
+                result = TestHelperEnums.FAILED.toString()
+
+            }
+
+            override fun OnValidationSuccess(userInfo: UserInfo) {
+                result = TestHelperEnums.SUCCESS.toString()
+
+            }
+
+
+        })
         Validations.validateUserInputs(
             "tahir zaidi",
             "scheme 33 karachi",
@@ -92,19 +105,7 @@ class LibTests {
             "75290",
             "Sindh",
             "PK",
-            object : Validationcallbacks {
-                override fun onValidationError(error: String) {
-                    result = TestHelperEnums.FAILED.toString()
-
-                }
-
-                override fun OnValidationSuccess(userInfo: UserInfo) {
-                    result = TestHelperEnums.SUCCESS.toString()
-
-                }
-
-
-            })
+        )
 
         Assert.assertEquals(result, "SUCCESS")
     }

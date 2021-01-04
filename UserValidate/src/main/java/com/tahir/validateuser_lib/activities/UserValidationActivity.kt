@@ -78,7 +78,7 @@ class UserValidationActivity : AppCompatActivity(), View.OnClickListener, Valida
                     edit_txtinput_city.text.toString(),
                     edit_txtinput_postalcode.text.toString(),
                     edit_txtinput_state.text.toString(),
-                    edit_txtinput_countrycode.text.toString(), this
+                    edit_txtinput_countrycode.text.toString()
                 )
 
 

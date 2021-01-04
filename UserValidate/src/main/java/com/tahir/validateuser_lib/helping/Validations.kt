@@ -5,6 +5,7 @@ import com.tahir.validateuser_lib.models.UserInfo
 import java.util.*
 
 object Validations {
+    lateinit var vb: Validationcallbacks
     fun validateCountryCode(): Array<String> {
 
         val countryCodes: Array<String> by lazy {
@@ -16,6 +17,12 @@ object Validations {
     }
 
 
+    fun setListener(vc: Validationcallbacks) {
+
+        this.vb = vc
+
+    }
+
     fun validateUserInputs(
         name: String,
         address1: String,
@@ -23,7 +30,7 @@ object Validations {
         city: String,
         postalCode: String,
         state: String,
-        countryCode: String, cb: Validationcallbacks
+        countryCode: String
     ) {
         var errorMsg: StringBuilder = StringBuilder()
 
@@ -62,7 +69,7 @@ object Validations {
 
         }
         if (errorMsg.toString().isEmpty()) {
-            cb.OnValidationSuccess(
+            vb.OnValidationSuccess(
                 UserInfo(
                     name,
                     address1,
@@ -75,7 +82,9 @@ object Validations {
             )
 
         } else {
-            cb.onValidationError(errorMsg.toString())
+            vb.onValidationError(errorMsg.toString())
         }
     }
+
+
 }

@@ -34,7 +34,7 @@ This app uses a number of open source projects Libraries and frameworks:
 Step #1 : Adding this library to your android project
 -----------------------------------------------------
 Copy the latest release of this project from github using the link :
-https://github.com/smtrz/UILibrary/releases/
+https://github.com/smtrz/UILibrary/releases
 
 OR
 
@@ -101,6 +101,16 @@ and after creating the id pass it as a bundle parameter with "id" key to launch 
    val intent = Intent(this, com.tahir.validateuser_lib.activities.UserValidationActivity::class.java)
    intent.putExtra("id", apiId)
    startActivity(intent)
+   ```
+To get the the response from the library :
+------------------------------------------
+just implement the interface  Validationcallbacks
+
+and set its listener , simply by:
+```
+Validations.setListener(this).  
+
+   
 ```
 Last words:
 -----------
