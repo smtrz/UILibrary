@@ -104,12 +104,11 @@ and after creating the id pass it as a bundle parameter with "id" key to launch 
    ```
 To get the the response from the library :
 ------------------------------------------
-just implement the interface  Validationcallbacks
+just implement the interface  Validationcallbacks with the methods of success and failure.
 
-and set its listener , simply by:
+and set its listener , simply by adding the following line into your activity.
 ```
-Validations.setListener(this).  
-
+Validations.setListener(this)
    
 ```
 Last words:
